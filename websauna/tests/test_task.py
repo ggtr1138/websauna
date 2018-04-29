@@ -89,7 +89,7 @@ def test_transaction_aware_task_success(celery_worker, task_app_request, dbsessi
         assert u.username != "set by celery"
 
     # Let the transaction commit
-    time.sleep(1.0)
+    time.sleep(0.5)
 
     # Task has now fired after transaction was committed
     with transaction.manager:
